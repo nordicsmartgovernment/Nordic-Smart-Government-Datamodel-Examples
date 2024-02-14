@@ -99,7 +99,7 @@ skos:prefLabel "Managing director"@en.
 
 # Two members of board together
 
-ex:signatory_rule_3 a ncv:SignatoryRule;
+ex:signatory_rule_2 a ncv:SignatoryRule;
 nsgb:twoOf ex:signatory_post_2.
 
 ex:Jussi a person:Person;

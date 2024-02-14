@@ -82,7 +82,11 @@
         }
       },
       {
-        "@id": "http://example.org/nsgb#signatory_rule_2"
+        "@id": "http://example.org/nsgb#signatory_rule_2",
+        "@type": "SignatoryRule",
+        "twoOf": {
+          "@id": "http://example.org/nsgb#signatory_post_2"
+        }
       },
       {
         "@id": "http://example.org/nsgb#signatory_post_1",
