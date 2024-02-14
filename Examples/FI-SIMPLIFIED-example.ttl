@@ -44,9 +44,9 @@ skos:prefLabel "No extraordinary status"@en.
 
 ex:signatory_rights1 a ncv:signatoryRights;
 dcterms:description "Hallituksen puheenjohtaja yksin, hallituksen jäsen ja toimitusjohtaja yhdessä sekä hallituksen jäsenet kaksi yhdessä"@fi;
-dcterms:description "Chairman of board alone, member of board and CEO together and two members of board together."@en;
+dcterms:description "Chairman of board alone, member of board and CEO together as well as two members of board together."@en;
 nsgb:mandates ex:signatory_post_1;
-nsgb:mandates ex:signatory_rule_1;
+nsgb:mandates ex:signatory_rule_1; # Could be nsgb:defines as well?
 nsgb:mandates ex:signatory_rule_2.
 
 # Alternatively
@@ -72,6 +72,7 @@ m8g:birthDate "1985-01-01"^^xsd:date.
 # Member of board and CEO together
 
 ex:signatory_rule_1 a ncv:SignatoryRule;
+dcterms:description "member of board and CEO together"@en;
 nsgb:anyOf ex:signatory_post_2;
 nsgb:oneOf ex:signatory_post_3.
 
