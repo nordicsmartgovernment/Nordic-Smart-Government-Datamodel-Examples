@@ -1,0 +1,134 @@
+{
+  "@id": "http://example.org/nsgb#OneSauna",
+  "@type": "LegalEntity",
+  "legalName": "OneSauna Oy",
+  "registrationDate": {
+    "@type": "xsd:date",
+    "@value": "2018-01-01"
+  },
+  "alternativeName": "Sauna ykköset Oy",
+  "signatoryRights": {
+    "@id": "http://example.org/nsgb#signatory_rights1",
+    "@type": "SignatoryRights",
+    "description": {
+      "en": "Chairman of board alone, member of board and CEO together and two members of board together.",
+      "fi": "Hallituksen puheenjohtaja yksin, hallituksen jäsen ja toimitusjohtaja yhdessä sekä hallituksen jäsenet kaksi yhdessä"
+    },
+    "mandates": [
+      {
+        "@id": "http://example.org/nsgb#signatory_rule_1",
+        "@type": "SignatoryRule",
+        "anyOf": {
+          "@id": "http://example.org/nsgb#signatory_post_2",
+          "@type": "Post",
+          "heldBy": [
+            {
+              "@id": "http://example.org/nsgb#Jussi",
+              "@type": "person:Person",
+              "birthDate": {
+                "@type": "xsd:date",
+                "@value": "1985-01-01"
+              },
+              "name": "Jussi"
+            },
+            {
+              "@id": "http://example.org/nsgb#Merja",
+              "@type": "person:Person",
+              "birthDate": {
+                "@type": "xsd:date",
+                "@value": "1985-01-01"
+              },
+              "name": "Merja"
+            },
+            {
+              "@id": "http://example.org/nsgb#Mikko",
+              "@type": "person:Person",
+              "birthDate": {
+                "@type": "xsd:date",
+                "@value": "1985-01-01"
+              },
+              "name": "Mikko"
+            }
+          ],
+          "role": {
+            "@id": "http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/BOARD_MEMBER",
+            "@type": "Concept",
+            "notation": "BOARD_MEMBER",
+            "prefLabel": {
+              "en": "Board member"
+            }
+          }
+        },
+        "oneOf": {
+          "@id": "http://example.org/nsgb#signatory_post_3",
+          "@type": "Post",
+          "heldBy": {
+            "@id": "http://example.org/nsgb#Kalle",
+            "@type": "person:Person",
+            "birthDate": {
+              "@type": "xsd:date",
+              "@value": "1987-01-01"
+            },
+            "name": "Kalle"
+          },
+          "role": {
+            "@id": "http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/MANAGING_DIRECTOR",
+            "@type": "Concept",
+            "notation": "MANAGING_DIRECTOR",
+            "prefLabel": {
+              "en": "Managing director"
+            }
+          }
+        }
+      },
+      {
+        "@id": "http://example.org/nsgb#signatory_rule_2"
+      },
+      {
+        "@id": "http://example.org/nsgb#signatory_post_1",
+        "@type": "Post",
+        "heldBy": {
+          "@id": "http://example.org/nsgb#Seppo",
+          "@type": "person:Person",
+          "birthDate": {
+            "@type": "xsd:date",
+            "@value": "1985-01-01"
+          },
+          "name": "Seppo"
+        },
+        "role": {
+          "@id": "http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/CHAIRMAN_OF_THE_BOARD",
+          "@type": "Concept",
+          "notation": "CHAIRMAN_OF_THE_BOARD",
+          "prefLabel": {
+            "en": "Chairman of the board"
+          }
+        }
+      }
+    ]
+  },
+  "companyActivity": {
+    "@id": "http://data.europa.eu/ux2/nace2.1/4645",
+    "@type": "Concept",
+    "notation": "46.45",
+    "prefLabel": {
+      "fi": "Tukkukauppa kosmetiikka- ja hygieniatuotteilla",
+      "en": "Wholesale of perfume and cosmetics"
+    }
+  },
+  "companyStatus": {
+    "@id": "http://example.org/something#NONE",
+    "@type": "Concept",
+    "prefLabel": {
+      "en": "No extraordinary status"
+    }
+  },
+  "companyType": {
+    "@id": "http://data.europa.eu/ih3/legal-form/gl-l-557c9416bbc68557da7fee64ba5d75c6",
+    "@type": "Concept",
+    "notation": "OY",
+    "prefLabel": {
+      "fi": "Osakeyhtiö"
+    }
+  }
+}

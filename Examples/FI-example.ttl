@@ -1,0 +1,142 @@
+@prefix m8g:        <http://data.europa.eu/m8g/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix person:     <http://www.w3.org/ns/person#> .
+@prefix nsgb:       <http://uri.suomi.fi/datamodel/ns/nsgb#> .
+@prefix legal:      <http://www.w3.org/ns/legal#> .
+@prefix legalForm: <http://data.europa.eu/ih3/legal-form/> .
+@prefix nace:       <http://data.europa.eu/ux2/nace2.1/> .
+@prefix ex:         <http://example.org/nsgb#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix compStatus: <http://example.org/something#> .
+@prefix adms:       <http://www.w3.org/ns/adms#> .
+@prefix ncv:        <http://uri.suomi.fi/datamodel/ns/ncv#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix org:        <https://www.w3.org/ns/org#> .
+@prefix role: <http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/> .
+
+
+ex:OneSauna a legal:LegalEntity;
+m8g:registrationDate "2018-01-01"^^xsd:date;
+m8g:legalName "OneSauna Oy";
+dcterms:alternativeName "Sauna ykköset Oy";
+legal:companyActivity nace:4645;
+legal:companyStatus compStatus:NONE;
+legal:companyType legalForm:gl-l-557c9416bbc68557da7fee64ba5d75c6;
+nsgb:signatoryRights ex:signatory_rights1.
+
+legalForm:gl-l-557c9416bbc68557da7fee64ba5d75c6 a skos:Concept;
+skos:prefLabel "Osakeyhtiö"@fi;
+skos:notation "OY".
+
+nace:4645 a skos:Concept;
+skos:prefLabel "Tukkukauppa kosmetiikka- ja hygieniatuotteilla"@fi;
+skos:prefLabel "Wholesale of perfume and cosmetics"@en;
+skos:notation "46.45".
+
+legalForm:FI_OYJ a skos:Concept;
+skos:prefLabel "Julkinen osakeyhtiö"@fi;
+skos:prefLabel "Public limited company"@en;
+skos:notation "FI_OYJ".
+
+compStatus:NONE a skos:Concept;
+skos:prefLabel "No extraordinary status"@en.
+
+ex:signatory_rights1 a ncv:SignatoryRights;
+dcterms:description "Hallituksen puheenjohtaja yksin, hallituksen jäsen ja toimitusjohtaja yhdessä sekä hallituksen jäsenet kaksi yhdessä"@fi;
+dcterms:description "Chairman of board alone, member of board and CEO together and two members of board together."@en;
+nsgb:hasSignatoryRule ex:signatory_rule_1;
+nsgb:hasSignatoryRule ex:signatory_rule_2;
+nsgb:hasSignatoryRule ex:signatory_rule_3.
+
+
+# Chairman of board alone
+
+ex:signatory_rule_1 a ncv:SignatoryRule;
+skos:notation "ALONE";
+nsgb:hasMembership nsgb:Signatory_Membership_1.
+
+ex:signatory_Membership_1 a org:Membership;
+org:role role:CHAIRMAN_OF_THE_BOARD;
+org:member ex:Seppo.
+
+role:CHAIRMAN_OF_THE_BOARD a skos:Concept;
+skos:notation "CHAIRMAN_OF_THE_BOARD";
+skos:prefLabel "Chairman of the board"@en.
+
+ex:Seppo a person:Person;
+foaf:name "Seppo";
+m8g:birthDate "1985-01-01"^^xsd:date.
+
+
+# Member of board and CEO together
+
+ex:signatory_rule_2 a ncv:SignatoryRule;
+skos:notation "JOINTLY";
+nsgb:hasMembershipRequirement ex:memberShipRequirement_2;
+nsgb:hasMembershipRequirement ex:memberShipRequirement_3.
+
+ex:memberShipRequirement_2 a nsgb:MembershipRequirement;
+nsgb:cardinality "ANY_OF";
+org:membership ex:board_membership_1;
+org:membership ex:board_membership_2;
+org:membership ex:board_membership_3.
+
+ex:memberShipRequirement_3 a nsgb:MembershipRequirement;
+nsgb:cardinality "ONE_OF";
+org:membership ex:director_membership_1.
+
+ex:director_membership_1 a org:Membership;
+org:role role:MANAGING_DIRECTOR;
+org:member ex:Kalle.
+
+ex:Kalle a person:Person;
+foaf:name "Kalle";
+m8g:birthDate "1987-01-01"^^xsd:date.
+
+role:MANAGING_DIRECTOR a skos:Concept;
+skos:notation "MANAGING_DIRECTOR";
+skos:prefLabel "Managing director"@en.
+
+# Two members of board together
+
+ex:signatory_rule_3 a ncv:SignatoryRule;
+skos:notation "JOINTLY";
+nsgb:hasMembershipRequirement ex:memberShipRequirement_1.
+
+ex:memberShipRequirement_1 a nsgb:MembershipRequirement;
+nsgb:cardinality "TWO_OF";
+org:membership ex:board_membership_1;
+org:membership ex:board_membership_2;
+org:membership ex:board_membership_3.
+
+
+# Board members
+
+ex:board_membership_1 a org:Membership;
+org:role role:BOARD_MEMBER;
+org:member ex:Jussi.
+
+ex:board_membership_1 a org:Membership;
+org:role role:BOARD_MEMBER;
+org:member ex:Merja.
+
+ex:board_membership_1 a org:Membership;
+org:role role:BOARD_MEMBER;
+org:member ex:Mikko.
+
+role:BOARD_MEMBER a skos:Concept;
+skos:notation "BOARD_MEMBER";
+skos:prefLabel "Board member"@en.
+
+ex:Jussi a person:Person;
+foaf:name "Jussi";
+m8g:birthDate "1985-01-01"^^xsd:date.
+
+ex:Merja a person:Person;
+foaf:name "Merja";
+m8g:birthDate "1985-01-01"^^xsd:date.
+
+ex:Mikko a person:Person;
+foaf:name "Mikko";
+m8g:birthDate "1985-01-01"^^xsd:date.

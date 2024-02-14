@@ -1,0 +1,149 @@
+@prefix m8g:        <http://data.europa.eu/m8g/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix person:     <http://www.w3.org/ns/person#> .
+@prefix nsgb:       <http://uri.suomi.fi/datamodel/ns/nsgb#> .
+@prefix legal:      <http://www.w3.org/ns/legal#> .
+@prefix legalForm: <http://data.europa.eu/ih3/legal-form/> .
+@prefix nace:       <http://data.europa.eu/ux2/nace2.1/> .
+@prefix ex:         <http://example.org/nsgb#> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix compStatus: <http://example.org/something#> .
+@prefix adms:       <http://www.w3.org/ns/adms#> .
+@prefix ncv:        <http://uri.suomi.fi/datamodel/ns/ncv#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix org:        <https://www.w3.org/ns/org#> .
+@prefix role: <http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/> .
+
+
+ex:Testbolaget a legal:LegalEntity;
+m8g:registrationDate "2018-01-01"^^xsd:date;
+m8g:legalName "Testbolaget 1 AB";
+m8g:legalIdentifier ex:55443301;
+legal:companyActivity nace:4645;
+legal:companyType legalForm:gl-l-27b665e8ace12fbcd908368c2d177d26;
+legal:companyStatus compStatus:NONE;
+nsgb:signatoryRights ex:signatory_rights1.
+
+ex:55443301 a adms:Identifier;
+skos:notation "55443301".
+
+nace:9200 a skos:Concept;
+skos:prefLabel "Spel och vadslagning"@sv;
+skos:prefLabel "Gambling and betting activities"@en;
+skos:notation "92.00".
+
+legalForm:gl-l-27b665e8ace12fbcd908368c2d177d26 a skos:Concept;
+skos:prefLabel "Aktiebolag"@sv;
+skos:notation "AB".
+
+compStatus:NONE a skos:Concept;
+skos:prefLabel "No extraordinary status"@en.
+
+ex:signatory_rights1 a ncv:SignatoryRights;
+dcterms:description "Firman tecknas av styrelsen"@fi;
+dcterms:description "The board have signatory rights"@en;
+nsgb:hasSignatoryRule ex:signatory_rule_1.
+
+ex:signatory_rule_1 a ncv:SignatoryRule;
+skos:notation "JOINTLY";
+nsgb:hasMembershipRequirement ex:memberShipRequirement_1.
+
+ex:memberShipRequirement_1 a nsgb:MembershipRequirement;
+nsgb:cardinality "ALL_OF";
+org:membership ex:membership_1;
+org:membership ex:membership_2;
+org:membership ex:membership_3.
+
+ex:membership_1 a org:Membership;
+org:role role:BOARD_MEMBER;
+org:member ex:David.
+
+ex:membership_2 a org:Membership;
+org:role role:BOARD_MEMBER;
+org:member ex:Erik.
+
+ex:membership_3 a org:Membership;
+org:role role:BOARD_MEMBER;
+org:member ex:Fredrik.
+
+role:BOARD_MEMBER a skos:Concept;
+skos:notation "Styrelseledamot";
+skos:prefLabel "Board member"@en.
+
+ex:David a person:Person;
+foaf:name "David Davidsson";
+m8g:birthDate "1985-01-02"^^xsd:date.
+
+ex:Erik a person:Person;
+foaf:name "Erik Eriksson";
+m8g:birthDate "1985-01-03"^^xsd:date.
+
+ex:Fredrik a person:Person;
+foaf:name "Fredrik Fredriksson";
+m8g:birthDate "1985-01-04"^^xsd:date.
+
+
+
+ex:signatory_rights2 a ncv:signatoryRights;
+dcterms:description "Firman tecknas två i förening av externa firmatecknare eller en av dom i förening med styrelseledamöter"@sv;
+dcterms:description "Two of the external signatories or one of them toghether with all of the board members"@en;
+nsgb:hasSignatoryRule ex:signatory_rule_2;
+nsgb:hasSignatoryRule ex:signatory_rule_3.
+
+ex:signatory_rule_2 a ncv:SignatoryRule;
+skos:notation "JOINTLY";
+nsgb:hasMembershipRequirement ex:memberShipRequirement_2.
+
+ex:memberShipRequirement_2 a nsgb:MembershipRequirement;
+nsgb:cardinality "TWO_OF";
+org:membership ex:membership_4;
+org:membership ex:membership_5;
+org:membership ex:membership_6.
+
+
+ex:signatory_rule_3 a ncv:SignatoryRule;
+skos:notation "JOINTLY";
+nsgb:hasMembershipRequirement ex:memberShipRequirement_3;
+nsgb:hasMembershipRequirement ex:memberShipRequirement_4.
+
+ex:memberShipRequirement_3 a nsgb:MembershipRequirement;
+nsgb:cardinality "ONE_OF";
+org:membership ex:membership_4;
+org:membership ex:membership_5;
+org:membership ex:membership_6.
+
+ex:memberShipRequirement_4 a nsgb:MembershipRequirement;
+nsgb:cardinality "ALL_OF";
+org:membership ex:membership_1;
+org:membership ex:membership_2;
+org:membership ex:membership_3.
+
+
+ex:membership_4 a org:Membership;
+org:role role:EXTERNAL_SIGNATORY;
+org:member ex:Anders.
+
+ex:membership_5 a org:Membership;
+org:role role:EXTERNAL_SIGNATORY;
+org:member ex:Bjorn.
+
+ex:membership_6 a org:Membership;
+org:role role:EXTERNAL_SIGNATORY;
+org:member ex:Carin.
+
+role:EXTERNAL_SIGNATORY a skos:Concept;
+skos:notation "EXT";
+skos:prefLabel "Extern firmatecknare"@sv.
+
+ex:Anders a person:Person;
+foaf:name "Anders Anderson";
+m8g:birthDate "1985-01-06"^^xsd:date.
+
+ex:Bjorn a person:Person;
+foaf:name "Björn Björnsson";
+m8g:birthDate "1985-01-08"^^xsd:date.
+
+ex:Carin a person:Person;
+foaf:name "Carin Carinsson";
+m8g:birthDate "1985-01-10"^^xsd:date.
