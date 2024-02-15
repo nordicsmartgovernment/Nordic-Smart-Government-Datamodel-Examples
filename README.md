@@ -53,11 +53,11 @@ A self-employed person, company, or organization that has legal rights and oblig
 
 ## Signatory rights
 
-Describes mandate that gives power to agent(s) to represent a legal entity trough a post in a legal entity. Signatory rights can be defined as free text or structured as machine readable signatory rules.
+Describes mandate that gives power to agent(s) to represent a legal entity alone or jointly trough a post(s) in a legal entity. Signatory rights can be defined as free text or structured as machine readable signatory rules.
 
 ## Signatory rule
 
-Structured rules that dictate the combination of posts, roles and agents to whom the representation power is granted. Rules can be used to define signatory rights that are granted alone or jointly. The rule is interpreted jointly if it points to multiple posts using restriction properties. For example one of from one post and majority of from another post in the legal entity.
+Structured rules that dictate the combination of posts, roles and agents to whom the representation power is granted. Rules can be used to structure signatory rights that can be granted alone to an individual agent or jointly for group of agents. The rule is interpreted jointly if it points to multiple posts using restriction properties. 
 
 ## Post
 
@@ -85,4 +85,12 @@ Entity that is able to carry out action. Class reused from FOAF / [Core business
  
  Denotes a role that a Person or other Agent can take in an organization. Class reused from [Organisation ontology](https://www.w3.org/TR/vocab-org/#class-role).
 
- NSG&B defines set of roles to be used as classification. TBD!
+ TBD!
+
+ NSG&B defines set of roles to be used as classification.
+
+ # Examples
+
+ TBD!
+ 
+ Some text examples and point to RDF examples. TBD!
