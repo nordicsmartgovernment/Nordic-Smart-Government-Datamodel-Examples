@@ -63,6 +63,8 @@ Structured rules that dictate the combination of posts, roles and agents to whom
 
 A Post represents some position within an organization that exists independently of the agent or agents filling it. A post can be held by multiple persons or legal entities. The Post concept is reused from the [W3C Organization ontology](https://www.w3.org/TR/vocab-org/#class-post).
 
+There can be multiple Posts using the same Role for different responsibilities and signatory rights. For example if Signatory right is given to external personnel, one agent may have signatory rights alone and other agents with the same role can have signatory rights jointly.
+
 ## Restriction properties
 
 Signatory rights are commonly granted to an agent or a group of agents trough a post and a role in an organisation. The rights can be granted to an agent acting alone or jointly with another agents. Typically these type of rules have been described as freeform text which can be structured using following classification:
@@ -92,5 +94,5 @@ Entity that is able to carry out action. Class reused from FOAF / [Core business
  # Examples
 
  TBD!
- 
+
  Some text examples and point to RDF examples. TBD!
