@@ -2,6 +2,10 @@
 
 The model describes Signatory Rights as an collection of Signatory Rules that defines required combination of agents (Person/Legal entity) holding a position (Post) in an organisation (Legal entity). Agent can hold one to many positions in an organisation and can acquire signatory power trough multiple signatory rules.
 
+This model is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb) and a suggestion for generic approach of how to model signatory rights within European Union.
+
+TBD! Document relation to [CCEV ontology](https://semiceu.github.io/CCCEV/releases/2.00/) and [RPaM ontology](https://github.com/everis-rpam/RPaM-Ontology/wiki/Conceptual-Model-v1.1).
+
 ```mermaid
  %%{init:{'flowchart':{'nodeSpacing': 30, 'rankSpacing': 95, 'htmlLabels': false}}}%%
     classDiagram
@@ -25,7 +29,7 @@ The model describes Signatory Rights as an collection of Signatory Rules that de
             Description : String
         }
 
-        SignatoryRule ..> Post : (one to five)Of
+        SignatoryRule ..> Post : numberOf (one to five)
         SignatoryRule --> Post : majorityOf
         SignatoryRule --> Post : allOf
 
