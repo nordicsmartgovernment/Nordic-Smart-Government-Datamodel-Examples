@@ -4,7 +4,7 @@ The model describes Signatory Rights as an collection of Signatory Rules that de
 
 This model is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb) and a suggestion for generic approach of how to model signatory rights within European Union.
 
-TBD! Document relation to [CCEV ontology](https://semiceu.github.io/CCCEV/releases/2.00/) and [RPaM ontology](https://github.com/everis-rpam/RPaM-Ontology/wiki/Conceptual-Model-v1.1).
+The model is defined as subclasses of [Core Criterion and Core Evidence Vocabulary](https://semiceu.github.io/CCCEV/releases/2.00/) defining more detailed conditions and constraints for Signatory rights. The model is also related to [Core Vocabulary of Powers and Mandates](https://github.com/everis-rpam/RPaM-Ontology/wiki/Conceptual-Model-v1.1), which could be used to further define the type of the mandate. However, the Signatory rights model focuses mainly on defining machine readable rules for determining if an Agent or group of Agents has the signatory power.
 
 ```mermaid
  %%{init:{'flowchart':{'nodeSpacing': 30, 'rankSpacing': 95, 'htmlLabels': false}}}%%
@@ -16,7 +16,7 @@ TBD! Document relation to [CCEV ontology](https://semiceu.github.io/CCCEV/releas
             Alternative name : String
         }
 
-        LegalEntity --> "0..*" SignatoryRights : signatoryRights
+        LegalEntity --> "0..1" SignatoryRights : signatoryRights
 
         class SignatoryRights {
             Description : String
@@ -28,9 +28,10 @@ TBD! Document relation to [CCEV ontology](https://semiceu.github.io/CCCEV/releas
             Description : String
         }
 
-        SignatoryRule ..> "0..*" Post : numberOf (one to five)
+        SignatoryRule --> "0..*" Post : alone
+        SignatoryRule --> "0..*" Post : jointly
         SignatoryRule --> "0..*" Post : majorityOf
-        SignatoryRule --> "0..*" Post : allOf
+        SignatoryRule ..> "0..*" Post : numberOf (one to five)
 
         class Post {
 
@@ -71,16 +72,20 @@ Subclass of [Criterion](https://semiceu.github.io/CCCEV/releases/2.00/#Criterion
 ### Properties
 
 **description**: Free text description for the Signatory rights
+
 **signatoryRule**: Relation to structured signatory rule. Each referenced rule can give an agent or group of agents the signatory power (interpreted as OR clause).
 
 ## Signatory rule
 
-Structured rules that dictate the combination of Posts, Roles and Agents to whom the signatory power is granted to. The rights can be granted to an agent acting alone or jointly with another agents holding a post and a role in an organisation. The rule is interpreted jointly (and clause) if it points to multiple Posts using restriction properties.
+Constraints for number of agents required to sign on behalf of a legal entity. The signatory power is granted to Agents acting alone or jointly with other agents using constraint properties that define the required number of Posts, Roles and Agents.
 
-Typically these type of rules have been described as freeform text which can be structured using following restrictions:
+Subclass of [Constraint](https://semiceu.github.io/CCCEV/releases/2.00/#Constraint).
 
+Typically signatory rights have been described as freeform text which can be structured using following restrictions:
+
+* Alone
+* Jointly (All of)
 * Majority of
-* All of
 * One of
 * Two of
 * Three of
@@ -89,25 +94,32 @@ Typically these type of rules have been described as freeform text which can be 
 
 The model defines these restrictions as properties to be used by the Signatory Rules to constraint number of agents needed from Posts to have a signatory power to a Legal Entity.
 
-Subclass of [Constraint](https://semiceu.github.io/CCCEV/releases/2.00/#Constraint).
+*Notes:*
+
+*The signatory rules are interpreted jointly (AND clause) if it points to multiple Posts using multiple restriction properties.*
 
 ### Properties
 
+* **constraint** (abstract) defines constraint for a spesific post
 
-* **constraintOf** (abstract) defines constraint for a spesific post
+  * **alone** requires exactly one of the agents holding a post to sign.
+  
+  * **jointly** requires all of the agents holding a post to sign.
 
   * **majorityOf** requires majority of agents holding a post to sign.
 
-  * **allOf** requires all of the agents holding a post to sign.
+  * **numberOf** (abstract) requires defined number of agents holding a post to sign from a larger group of agents.
+    * **oneOf**
+    * **twoOf**
+    * **threeOf**
+    * **fourOf**
+    * **fiveOf**
 
-  * **numberOf** (abstract) requires defined number of agents holding a post to sign:
-    * oneOf
-    * twoOf
-    * threeOf
-    * fourOf
-    * fiveOf
+*Notes for the numeric constraints:*
 
-*Note: The need for numeric constraint was only up to 5 in all of Nordic countries. If requirement arises to model arbitrary numeric constraints this could be done using qualified relations, for example numberOf property and a blank node (or custom class) using rdf:value instead of creating explicit properties.*
+1. *There should always be at least one more agent holding a post than the required number of signatories when using numberOf constraint*
+
+2. *The need for numeric constraint was only up to 5 in all of Nordic countries. If requirement arises to model arbitrary numeric constraints this could be done using qualified relations, for example numberOf property and a blank node (or custom class) using rdf:value instead of creating explicit properties.* 
 
 ## Post
 
@@ -120,6 +132,7 @@ The Post concept is reused from the [W3C Organization ontology](https://www.w3.o
 ### Properties
 
 **role** Points to a role for the Post
+
 **heldBy** Points to agents holding the Post
 
 Note: Could have identifier and description if needed
@@ -150,6 +163,4 @@ TBD! NSG&B defines set of roles to be used as classification.
 
  # Examples
 
- TBD!
-
- Some text examples and point to RDF examples. TBD!
+See [Examples](https://github.com/nordicsmartgovernment/Nordic-Smart-Government-Datamodel-Examples/tree/main/Examples) folder
