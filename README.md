@@ -65,7 +65,7 @@ Note: Also other relevant properties from the Legal Entity.
 
 ## Signatory rights
 
-Describes criterion for a mandate that gives power to agent(s) to represent a legal entity alone or jointly trough a post(s) in a legal entity. Signatory rights can be defined as free text or structured as machine readable signatory rules.
+Criterion for a mandate that gives power to agent(s) to represent a legal entity alone or jointly trough a post(s) in a legal entity. Signatory rights can be defined as free text or structured as machine readable signatory rules.
 
 Subclass of [Criterion](https://semiceu.github.io/CCCEV/releases/2.00/#Criterion).
 
@@ -77,7 +77,7 @@ Subclass of [Criterion](https://semiceu.github.io/CCCEV/releases/2.00/#Criterion
 
 ## Signatory rule
 
-Constraints for number of agents required to sign on behalf of a legal entity. The signatory power is granted to Agents acting alone or jointly with other agents using constraint properties that define the required number of Posts, Roles and Agents.
+Structured constraints for the Agents required to sign on behalf of a legal entity. The existence of signatory power can be determined from the combination of constraint properties that define the required number of Posts and Roles to be held by the Agents."
 
 Subclass of [Constraint](https://semiceu.github.io/CCCEV/releases/2.00/#Constraint).
 
@@ -96,7 +96,7 @@ The model defines these restrictions as properties to be used by the Signatory R
 
 *Notes:*
 
-*The signatory rules are interpreted jointly (AND clause) if it points to multiple Posts using multiple restriction properties.*
+*The instance of signatory rule is interpreted jointly (AND clause) if it points to many Posts using multiple restriction properties.*
 
 ### Properties
 
