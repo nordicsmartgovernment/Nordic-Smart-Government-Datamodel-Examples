@@ -29,7 +29,7 @@ The model is defined as subclasses of [Core Criterion and Core Evidence Vocabula
         }
 
         SignatoryRule --> "0..*" Post : alone
-        SignatoryRule --> "0..*" Post : jointly
+        SignatoryRule --> "0..*" Post : allOf
         SignatoryRule --> "0..*" Post : majorityOf
         SignatoryRule ..> "0..*" Post : numberOf (one to five)
 
@@ -77,20 +77,21 @@ Subclass of [Criterion](https://semiceu.github.io/CCCEV/releases/2.00/#Criterion
 
 ## Signatory rule
 
-Structured constraints for the Agents required to sign on behalf of a legal entity. The existence of signatory power can be determined from the combination of constraint properties that define the required number of Posts and Roles to be held by the Agents."
+Structured constraints for the Agents required to sign on behalf of a Legal Entity. The existence of signatory power can be determined from the combination of constraint properties that define the required number of Posts and Roles to be held by the Agents."
 
 Subclass of [Constraint](https://semiceu.github.io/CCCEV/releases/2.00/#Constraint).
 
 Typically signatory rights have been described as freeform text which can be structured using following restrictions:
 
 * Alone
-* Jointly (All of)
-* Majority of
-* One of
-* Two of
-* Three of
-* Four of
-* Five of
+* Jointly
+  * All of
+  * Majority of
+  * One of
+  * Two of
+  * Three of
+  * Four of
+  * Five of
 
 The model defines these restrictions as properties to be used by the Signatory Rules to constraint number of agents needed from Posts to have a signatory power to a Legal Entity.
 
@@ -103,17 +104,19 @@ The model defines these restrictions as properties to be used by the Signatory R
 * **constraint** (abstract) defines constraint for a spesific post
 
   * **alone** requires exactly one of the agents holding a post to sign.
+
+  * **jointly** (abstract) requires the agents holding a post to sign jointly according to the rules
   
-  * **jointly** requires all of the agents holding a post to sign.
+    * **allOf** requires all of the agents holding a post to sign.
 
-  * **majorityOf** requires majority of agents holding a post to sign.
+    * **majorityOf** requires majority of agents holding a post to sign.
 
-  * **numberOf** (abstract) requires defined number of agents holding a post to sign from a larger group of agents.
-    * **oneOf**
-    * **twoOf**
-    * **threeOf**
-    * **fourOf**
-    * **fiveOf**
+    * **numberOf** (abstract) requires defined number of agents holding a post to sign from a larger group of agents.
+      * **oneOf**
+      * **twoOf**
+      * **threeOf**
+      * **fourOf**
+      * **fiveOf**
 
 *Notes for the numeric constraints:*
 
