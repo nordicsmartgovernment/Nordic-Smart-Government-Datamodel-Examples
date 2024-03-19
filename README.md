@@ -1,8 +1,8 @@
 # Nordic Smart Government Signatory Rights Model
 
-The model describes Signatory Rights as an collection of Signatory Rules that defines required combination of agents (Person/Legal entity) holding a position (Post) in an organisation (Legal entity). Agent can hold one to many positions in an organisation and can acquire signatory power trough multiple signatory rules.
+This document proposes a generic approach for machine readable signatory rights for legal entities within European Union. The model has been done as part of the [Nordic Smart Government and Business Program](https://nordicsmartgovernment.org/) and is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb). The signatory right descriptions (instances of the model) can be used to validate that certain agents (persons or other legal entities) has the authority to make an agreement on behalf of some legal entity.
 
-This model is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb) and a suggestion for generic approach of how to model signatory rights within European Union.
+Signatory rights are defined as an collection of Signatory Rules that describe the required combination of agents (Person/Legal entity) holding a position (Post) in an organisation (Legal entity). Agent can hold one to many positions in an organisation and can acquire signatory power trough multiple signatory rules.
 
 The model is defined as subclasses of [Core Criterion and Core Evidence Vocabulary](https://semiceu.github.io/CCCEV/releases/2.00/) defining more detailed conditions and constraints for Signatory rights. The model is also related to [Core Vocabulary of Powers and Mandates](https://github.com/everis-rpam/RPaM-Ontology/wiki/Conceptual-Model-v1.1), which could be used to further define the type of the mandate. However, the Signatory rights model focuses mainly on defining machine readable rules for determining if an Agent or group of Agents has the signatory power.
 
@@ -28,7 +28,7 @@ The model is defined as subclasses of [Core Criterion and Core Evidence Vocabula
             Description : String
         }
 
-        SignatoryRule --> "0..*" Post : alone
+        SignatoryRule --> "0..1" Post : alone
         SignatoryRule --> "0..*" Post : allOf
         SignatoryRule --> "0..*" Post : majorityOf
         SignatoryRule ..> "0..*" Post : numberOf (one to five)
@@ -118,11 +118,11 @@ The model defines these restrictions as properties to be used by the Signatory R
       * **fourOf**
       * **fiveOf**
 
-*Notes for the numeric constraints:*
+*Notes on constraints:*
 
-1. *There should always be at least one more agent holding a post than the required number of signatories when using numberOf constraint*
+1. *The Alone constraint should always require exactly one Post (0..1) and should not be combined with other restriction properties within one signatory rule. In case of defining jointly restriction with singular requirement one should use oneOf restriction instead.*
 
-2. *The need for numeric constraint was only up to 5 in all of Nordic countries. If requirement arises to model arbitrary numeric constraints this could be done using qualified relations, for example numberOf property and a blank node (or custom class) using rdf:value instead of creating explicit properties.* 
+2. *The need for numeric constraint was only up to 5 in all of Nordic countries. If requirement arises to model arbitrary numeric constraints this could be done using qualified relations, for example numberOf property and a blank node (or custom class) using rdf:value instead of creating explicit properties.*
 
 ## Post
 
@@ -161,8 +161,6 @@ Class reused from [Organisation ontology](https://www.w3.org/TR/vocab-org/#class
 **preferredLabel** Label for the role
 **notation** Identifier for the code in text form
 **inScheme** Reference to the classification
-
-TBD! NSG&B defines set of roles to be used as classification.
 
  # Examples
 
