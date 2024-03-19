@@ -164,4 +164,4 @@ Class reused from [Organisation ontology](https://www.w3.org/TR/vocab-org/#class
 
  # Examples
 
-See [Examples](https://github.com/nordicsmartgovernment/Nordic-Smart-Government-Datamodel-Examples/tree/main/Examples) folder
+See [Examples](https://github.com/nordicsmartgovernment/Nordic-Smart-Government-Datamodel-Examples/tree/main/Examples) folder for JSON and JSON-LD examples. OpenAPI examples can also be seen in the [NSG&B API documentation](https://nordicsmartgovernment.github.io/Nordic-Smart-Government-OpenAPI-Specifications/v2.html#tag/nordicinformation/operation/signatoryRights).
