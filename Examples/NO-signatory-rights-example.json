@@ -1,0 +1,50 @@
+{
+    "description": "Styrets leder og ett styremedlem i fellesskap. (Chairman and one member jointly)",
+    "signatoryRules": [
+      {
+        "description": "Styrets leder og ett styremedlem i fellesskap",
+        "oneOf": [
+          {
+            "role": {
+              "notation": "LEDE",
+              "prefLabel": "Styrets leder"
+            },
+            "heldByPerson": [
+              {
+                "fullName": "Ole Martin Foss",
+                "dateOfBirth": "1968-08-24",
+                "identifier": {
+                  "notation": "ABC1234",
+                  "issuingAuthorityName": "Folkeregisteret i eksempelland"
+                }
+              }
+            ]
+          },
+          {
+            "role": {
+              "notation": "MEDL",
+              "prefLabel": "Styremedlem"
+            },
+            "heldByPerson": [
+              {
+                "fullName": "Aslak Ege",
+                "dateOfBirth": "1970-12-31",
+                "identifier": {
+                  "notation": "DEF5678",
+                  "issuingAuthorityName": "Folkeregisteret i eksempelland"
+                }
+              },
+              {
+                "fullName": "Jan-Arne Moen",
+                "dateOfBirth": "1977-11-31",
+                "identifier": {
+                  "notation": "GHI91011",
+                  "issuingAuthorityName": "Folkeregisteret i eksempelland"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
