@@ -14,9 +14,36 @@
       "en": "Chairman of board alone, member of board and CEO together and two members of board together.",
       "fi": "Hallituksen puheenjohtaja yksin, hallituksen jäsen ja toimitusjohtaja yhdessä sekä hallituksen jäsenet kaksi yhdessä"
     },
-    "mandates": [
+    "signatoryRules": [
       {
         "@id": "http://example.org/nsgb#signatory_rule_1",
+        "@type": "SignatoryRule",
+        "alone": {
+          "@id": "http://example.org/nsgb#signatory_post_1",
+          "@type": "Post",
+          "heldBy": [
+            {
+            "@id": "http://example.org/nsgb#Seppo",
+            "@type": "person:Person",
+            "birthDate": {
+              "@type": "xsd:date",
+              "@value": "1985-01-01"
+            },
+            "name": "Seppo"
+            }
+          ],
+          "role": {
+            "@id": "http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/CHAIRMAN_OF_THE_BOARD",
+            "@type": "Concept",
+            "notation": "CHAIRMAN_OF_THE_BOARD",
+            "prefLabel": {
+              "en": "Chairman of the board"
+            }
+          }
+        }
+      },
+      {
+        "@id": "http://example.org/nsgb#signatory_rule_2",
         "@type": "SignatoryRule",
         "anyOf": {
           "@id": "http://example.org/nsgb#signatory_post_2",
@@ -82,31 +109,10 @@
         }
       },
       {
-        "@id": "http://example.org/nsgb#signatory_rule_2",
+        "@id": "http://example.org/nsgb#signatory_rule_3",
         "@type": "SignatoryRule",
         "twoOf": {
           "@id": "http://example.org/nsgb#signatory_post_2"
-        }
-      },
-      {
-        "@id": "http://example.org/nsgb#signatory_post_1",
-        "@type": "Post",
-        "heldBy": {
-          "@id": "http://example.org/nsgb#Seppo",
-          "@type": "person:Person",
-          "birthDate": {
-            "@type": "xsd:date",
-            "@value": "1985-01-01"
-          },
-          "name": "Seppo"
-        },
-        "role": {
-          "@id": "http://uri.suomi.fi/codelist/verotus/MembershipRoles/code/CHAIRMAN_OF_THE_BOARD",
-          "@type": "Concept",
-          "notation": "CHAIRMAN_OF_THE_BOARD",
-          "prefLabel": {
-            "en": "Chairman of the board"
-          }
         }
       }
     ]

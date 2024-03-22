@@ -44,18 +44,15 @@ skos:prefLabel "No extraordinary status"@en.
 
 ex:signatory_rights1 a ncv:signatoryRights;
 dcterms:description "Hallituksen puheenjohtaja yksin, hallituksen jäsen ja toimitusjohtaja yhdessä sekä hallituksen jäsenet kaksi yhdessä"@fi;
-dcterms:description "Chairman of board alone, member of board and CEO together as well as two members of board together."@en;
-nsgb:mandates ex:signatory_post_1;
-nsgb:mandates ex:signatory_rule_1; # Could be nsgb:defines as well ... or nsgb:mandatesJointly.
-nsgb:mandates ex:signatory_rule_2.
-
-# Alternatively
-# nsgb:alone ex:signatory_post_1; # Defines post directly
-# nsgb:jointly ex:signatory_rule_1;
-# nsgb:jointly ex:signatory_rule_2.
-
+dcterms:description "Chairman of the board alone, member of board and CEO together as well as two members of board together."@en;
+ncv:signatoryRule ex:signatory_rule_1;
+ncv:signatoryRule ex:signatory_rule_2.
 
 # Chairman of board alone
+
+ex:signatory_rule_1 a ncv:SignatoryRule;
+dcterms:description "Chairman of the board alone"@en;
+ncv:alone ex:signatory_post_1;
 
 ex:signatory_post_1 a org:Post;
 org:role role:CHAIRMAN_OF_THE_BOARD;
@@ -71,10 +68,10 @@ m8g:birthDate "1985-01-01"^^xsd:date.
 
 # Member of board and CEO together
 
-ex:signatory_rule_1 a ncv:SignatoryRule;
-dcterms:description "member of board and CEO together"@en;
-nsgb:anyOf ex:signatory_post_2;
-nsgb:oneOf ex:signatory_post_3.
+ex:signatory_rule_2 a ncv:SignatoryRule;
+dcterms:description "Member of board and CEO together"@en;
+ncv:anyOf ex:signatory_post_2;
+ncv:oneOf ex:signatory_post_3.
 
 ex:signatory_post_2 a org:Post;
 org:role role:BOARD_MEMBER;
@@ -98,10 +95,11 @@ role:MANAGING_DIRECTOR a skos:Concept;
 skos:notation "MANAGING_DIRECTOR";
 skos:prefLabel "Managing director"@en.
 
-# Two members of board together
+# Two members of the board together
 
-ex:signatory_rule_2 a ncv:SignatoryRule;
-nsgb:twoOf ex:signatory_post_2.
+ex:signatory_rule_3 a ncv:SignatoryRule;
+dcterms:description "Two members of the board together"
+ncv:twoOf ex:signatory_post_2.
 
 ex:Jussi a person:Person;
 foaf:name "Jussi";
