@@ -120,7 +120,7 @@ The model defines these restrictions as properties to be used by the Signatory R
 
 *Notes on constraints:*
 
-1. *The Alone constraint should always require exactly one Post (0..1) and should not be combined with other restriction properties within one signatory rule. In case of defining jointly restriction with singular requirement one should use oneOf restriction instead.*
+1. *The Alone constraint should always require exactly one Post (0..1) and should not be combined with other restriction properties within one signatory rule. In case of defining jointly restriction with singular requirement one should list of oneOf restriction instead. See [example](https://github.com/nordicsmartgovernment/Nordic-Smart-Government-Datamodel-Examples/blob/main/Examples/NO-signatory-rights-example.json)*
 
 2. *The need for numeric constraint was only up to 5 in all of Nordic countries. If requirement arises to model arbitrary numeric constraints this could be done using qualified relations, for example numberOf property and a blank node (or custom class) using rdf:value instead of creating explicit properties.*
 
