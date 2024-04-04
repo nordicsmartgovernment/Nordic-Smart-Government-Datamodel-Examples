@@ -1,6 +1,8 @@
 # Nordic Smart Government Signatory Rights Model
 
-This document proposes a generic approach for machine readable signatory rights for legal entities within European Union. The model has been done as part of the [Nordic Smart Government and Business Program](https://nordicsmartgovernment.org/) and is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb). The signatory right descriptions (instances of the model) can be used to validate that certain agents (persons or other legal entities) has the authority to make an agreement on behalf of some legal entity.
+This document proposes a generic approach for machine readable signatory rights for legal entities within European Union. 
+
+The model has been done as part of the [Nordic Smart Government and Business Program](https://nordicsmartgovernment.org/) and is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb). The signatory right descriptions (instances of the model) can be used to validate that certain agents (persons or other legal entities) has the authority to make an agreement on behalf of some legal entity.
 
 Signatory rights are defined as an collection of Signatory Rules that describe the required combination of agents (Person/Legal entity) holding a position (Post) in an organisation (Legal entity). Agent can hold one to many positions in an organisation and can acquire signatory power trough multiple signatory rules.
 
