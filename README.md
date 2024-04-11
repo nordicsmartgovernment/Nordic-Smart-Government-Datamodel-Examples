@@ -67,8 +67,6 @@ Note: Also other relevant properties from the Legal Entity.
 
 ## Signatory rights
 
-Signatory rights describe mandates that gives power to an agent to represent a legal entity.
-
 Criterion for a mandate that gives power to agent(s) to represent a legal entity alone or jointly trough a post(s) in a legal entity. Signatory rights can be defined as free text or structured as machine readable signatory rules.
 
 Subclass of [Criterion](https://semiceu.github.io/CCCEV/releases/2.00/#Criterion).
