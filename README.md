@@ -144,7 +144,7 @@ Note: Could have identifier and description if needed
 
 ## Agent
 
-Entity that is able to carry out action.
+Entity that is able to carry out actions.
 
 Class reused from FOAF / [Core business vocabulary](https://semiceu.github.io/Core-Business-Vocabulary/releases/2.1.0/#Agent).
 
