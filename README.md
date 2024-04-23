@@ -156,7 +156,7 @@ All properties required to define the agent
 
 Denotes a role that a Person or other Agent can take in an organization. 
 
-Class reused from [Organisation ontology](https://www.w3.org/TR/vocab-org/#class-role).
+Class reused from [W3C Organization ontology](https://www.w3.org/TR/vocab-org/#class-role).
 
 ### Properties
 
