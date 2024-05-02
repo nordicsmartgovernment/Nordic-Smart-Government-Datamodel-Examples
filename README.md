@@ -18,7 +18,7 @@ The model is defined as subclasses of [Core Criterion and Core Evidence Vocabula
             Alternative name : String
         }
 
-        LegalEntity --> "0..1" SignatoryRights : signatoryRights
+        LegalEntity --> "0..*" SignatoryRights : signatoryRights
 
         class SignatoryRights {
             Description : String
