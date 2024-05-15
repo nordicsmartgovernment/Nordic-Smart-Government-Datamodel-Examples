@@ -1,12 +1,22 @@
 # Nordic Smart Government Signatory Rights Model
 
-This document proposes a generic approach for machine readable signatory rights for legal entities within European Union. 
+Information about signatory rights is mainly registered in two different ways in various nations' business registers.
 
-The model has been done as part of the [Nordic Smart Government and Business Program](https://nordicsmartgovernment.org/) and is a subset of [Nordic Smart Government data model](https://tietomallit.suomi.fi/model/nsgb). The signatory right descriptions (instances of the model) can be used to validate that certain agents (persons or other legal entities) has the authority to make an agreement on behalf of some legal entity.
+1)	General provisions about signatory rights are registered either as free-text string or as textual code values, that specify terms for who can representent a legal entity. This is often only available in the national language. 
+2)	If signature rights have been assigned to named persons, these are registered with role types indicating that they have signature rights on the legal entity they represent.
 
-Signatory rights are defined as an collection of Signatory Rules that describe the required combination of agents (Person/Legal entity) holding a position (Post) in an organisation (Legal entity). Agent can hold one to many positions in an organisation and can acquire signatory power trough multiple signatory rules.
+A legal entity with multiple signatory rights can be registered with both variants. There are also examples of signatory rights consisting of both text and roles.
 
-The model is defined as subclasses of [Core Criterion and Core Evidence Vocabulary](https://semiceu.github.io/CCCEV/releases/2.00/) defining more detailed conditions and constraints for Signatory rights. The model is also related to [Core Vocabulary of Powers and Mandates](https://github.com/everis-rpam/RPaM-Ontology/wiki/Conceptual-Model-v1.1), which could be used to further define the type of the mandate. However, the Signatory rights model focuses mainly on defining machine readable rules for determining if an Agent or group of Agents has the signatory power.
+Unstructured information and different registration methods create challenges when information about signatory rights is to be exchanged and interpreted across national borders and systems. 
+
+This document proposes a generic approach for how to exchange signatory rights as structured and machine-readable rules within the EU. The Signatory rights model has been developed by the Nordic Smart Government and Business program and is a subset of the Nordic Smart Government data model. The signatory right descriptions (instances of the model) can be used to validate that certain agents (persons or other legal entities) have the authority to take legally binding decisions on behalf of some legal entity.
+
+The Signatory rights class is defined as criterion for one or more mandates that gives power to an agent to represent a legal entity. A legal entity can be registered with one or more instances of Signatory rights. 
+
+Signatory rights can consist of one or more signatory rules. Each rule describes in a structured machine-readable way the conditions for a mandate to be valid by setting requirements for the number of agents (Person or Legal entity) and the position(s) (Post) they must hold in a legal entity. An agent can hold one or many positions in a legal entity and can acquire signatory rights through multiple signatory rules.
+
+The Signatory rights model is based on the Core Criterion and Core Evidence Vocabulary defining Signatory rights and Signatory rule as subclasses of respectively Criterion and Constraint. The model is also related to Core Vocabulary of Powers and Mandates, which could be used to further define the type of the mandate. However, the Signatory rights model focuses on defining machine readable rules for determining if an Agent or group of Agents have signatory power.
+
 
 ```mermaid
  %%{init:{'flowchart':{'nodeSpacing': 30, 'rankSpacing': 95, 'htmlLabels': false}}}%%
