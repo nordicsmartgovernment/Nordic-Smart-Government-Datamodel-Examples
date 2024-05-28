@@ -1,0 +1,100 @@
+One long signatory right: Per and Karin have signatory rights jointly AND Ole and Karin have signatory rights jointly AND Per and Ole have signatory rights jointly
+
+"signatoryRights": [
+  {
+    "description": "Per and Karin have signatory rights jointly AND Ole and Karin have signatory rights jointly AND Per and Ole have signatory rights jointly"
+    "signatoryRule": [
+      {
+        "description": "Per and Karin have signatory rights jointly",
+        "allOf": [
+          {
+            "role": [
+              {
+                "code": "EXTERNAL_SIGNATORY",
+                "name": "External signatory"
+              }
+            ],
+            "heldByPerson": [
+              {
+                "fullName": "Per Martin Foss",
+                "dateOfBirth": "1971-01-26",
+                "identifier": {
+                  "notation": "ABC7890"
+                }
+              },
+              {
+                "fullName": "Karin Hansen",
+                "dateOfBirth": "1977-04-14",
+                "identifier": {
+                  "notation": "ABC4321"
+                }
+              }			  
+            ]			  
+          }
+        ]
+      }
+    ],
+    "signatoryRule": [
+      {
+        "description": "Ole and Karin have signatory rights jointly",
+        "allOf": [
+          {
+            "role": [
+              {
+                "code": "EXTERNAL_SIGNATORY",
+                "name": "External signatory"
+              }
+            ],
+            "heldByPerson": [
+              {
+                "fullName": "Ole Martin Foss",
+                "dateOfBirth": "1968-08-24",
+                "identifier": {
+                  "notation": "ABC1234"
+                }
+              },
+              {
+                "fullName": "Karin Hansen",
+                "dateOfBirth": "1977-04-14",
+                "identifier": {
+                  "notation": "ABC4321"
+                }
+              }			  
+            ]			  
+          }
+        ]
+      }
+    ],
+    "signatoryRule": [
+      {
+        "description": "Per and Ole have signatory rights jointly",
+        "allOf": [
+          {
+            "role": [
+              {
+                "code": "EXTERNAL_SIGNATORY",
+                "name": "External signatory"
+              }
+            ],
+            "heldByPerson": [
+              {
+                "fullName": "Ole Martin Foss",
+                "dateOfBirth": "1968-08-24",
+                "identifier": {
+                  "notation": "ABC1234"
+                }
+              },
+              {
+                "fullName": "Per Martin Foss",
+                "dateOfBirth": "1971-01-26",
+                "identifier": {
+                  "notation": "ABC7890"
+                }
+              }		  
+            ]			  
+          }
+        ]
+      }
+    ]
+  }
+]

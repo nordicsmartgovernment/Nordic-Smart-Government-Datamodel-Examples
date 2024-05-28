@@ -1,0 +1,52 @@
+Karin and Ola have signatory rights but they are registered with different roles. Karin have more than one role.
+
+"signatoryRights": [
+  {
+    "description": "Ola and Karin have signatory rights jointly"
+    "signatoryRule": [
+      {
+        "description": "Ola and Karin have signatory rights jointly",
+        "allOf": [
+          {
+            "role": [
+              {
+                "code": "EXTERNAL_SIGNATORY",
+                "name": "External signatory"
+              }
+            ],
+            "heldByPerson": [
+              {
+                "fullName": "Ole Martin Foss",
+                "dateOfBirth": "1968-08-24",
+                "identifier": {
+                  "notation": "ABC1234"
+                }
+              }		  
+            ]			  
+          },
+          {
+            "role": [
+              {
+                "code": "BOARD_MEMBER",
+                "name": "Board Member"
+              },
+              {
+                "code": "CHAIRMAN_OF_THE_BOARD",
+                "name": "Chairman of the board"
+              }			  
+            ],
+            "heldByPerson": [
+              {
+                "fullName": "Karin Hansen",
+                "dateOfBirth": "1977-04-14",
+                "identifier": {
+                  "notation": "ABC4321"
+                }
+              }			  
+            ]			  
+          }
+        ]
+      }
+    ]
+  }
+]
