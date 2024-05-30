@@ -50,7 +50,7 @@ The Signatory rights model is based on the [Core Criterion and Core Evidence Voc
         }
 
         Post --> "1..*" Agent : Held by
-        Post --> "1" Role : Role
+        Post --> "1..*" Role : Role
 
         class Role {
             Preferred label : String
