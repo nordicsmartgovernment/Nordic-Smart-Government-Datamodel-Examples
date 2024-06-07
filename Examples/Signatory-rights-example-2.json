@@ -1,4 +1,4 @@
-Karin and Ola have signatory rights but they are registered with different roles. Karin have more than one role.
+Karin and Ola have signatory rights but they are registered with different roles.
 
 "signatoryRights": [
   {
@@ -29,11 +29,7 @@ Karin and Ola have signatory rights but they are registered with different roles
               {
                 "code": "BOARD_MEMBER",
                 "name": "Board Member"
-              },
-              {
-                "code": "CHAIRMAN_OF_THE_BOARD",
-                "name": "Chairman of the board"
-              }			  
+              }		  
             ],
             "heldByPerson": [
               {
