@@ -8,12 +8,10 @@ Ola and Karin have signatory rights OR one of them together with Per.
         "description": "Ola and Karin have signatory rights jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
@@ -39,12 +37,10 @@ Ola and Karin have signatory rights OR one of them together with Per.
         "description": "One of Ola and Karin and Per have signatory rights jointly",
         "oneOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
@@ -65,12 +61,10 @@ Ola and Karin have signatory rights OR one of them together with Per.
         ],
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Per Martin Foss",
