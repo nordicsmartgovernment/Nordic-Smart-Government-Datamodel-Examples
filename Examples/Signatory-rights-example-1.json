@@ -8,12 +8,10 @@ Karin is included in more that one signatory right. Karin, Ola, Per all have the
         "description": "Ola and Karin jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
@@ -42,12 +40,10 @@ Karin is included in more that one signatory right. Karin, Ola, Per all have the
         "description": "Per and Karin have signatory rights jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Per Martin Foss",
