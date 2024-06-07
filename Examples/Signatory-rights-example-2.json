@@ -8,12 +8,10 @@ Karin and Ola have signatory rights but they are registered with different roles
         "description": "Ola and Karin have signatory rights jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
@@ -25,12 +23,10 @@ Karin and Ola have signatory rights but they are registered with different roles
             ]			  
           },
           {
-            "role": [
-              {
+            "role": {
                 "code": "BOARD_MEMBER",
                 "name": "Board Member"
-              }		  
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Karin Hansen",
