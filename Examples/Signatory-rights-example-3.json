@@ -8,12 +8,10 @@ All the external signatories must sign with one of the board membder.
         "description": "The external signatories have signtory right togheter with one of the board members.",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
@@ -34,12 +32,10 @@ All the external signatories must sign with one of the board membder.
         ],
         "oneOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "BOARD_MEMBER",
                 "name": "Board Member"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Per Martin Foss",
