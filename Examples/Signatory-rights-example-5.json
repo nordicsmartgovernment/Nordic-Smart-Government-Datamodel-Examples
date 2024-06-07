@@ -8,12 +8,10 @@ One long signatory right: Per and Karin have signatory rights jointly AND Ole an
         "description": "Per and Karin have signatory rights jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Per Martin Foss",
@@ -39,12 +37,10 @@ One long signatory right: Per and Karin have signatory rights jointly AND Ole an
         "description": "Ole and Karin have signatory rights jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
@@ -70,12 +66,10 @@ One long signatory right: Per and Karin have signatory rights jointly AND Ole an
         "description": "Per and Ole have signatory rights jointly",
         "allOf": [
           {
-            "role": [
-              {
+            "role": {
                 "code": "EXTERNAL_SIGNATORY",
                 "name": "External signatory"
-              }
-            ],
+            },
             "heldByPerson": [
               {
                 "fullName": "Ole Martin Foss",
