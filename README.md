@@ -22,7 +22,7 @@ The Signatory rights model is based on the [Core Criterion and Core Evidence Voc
  %%{init:{'flowchart':{'nodeSpacing': 30, 'rankSpacing': 95, 'htmlLabels': false}}}%%
     classDiagram
        
-        class NordansLegalEntity {
+        class LegalEntity {
             Registration date : Date
             Legal name : String
             Alternative name : String
